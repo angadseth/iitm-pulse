@@ -15,7 +15,7 @@ function AuthGate({ children }) {
 function SetupGate({ children }) {
   const { user } = useAuth()
   const { profile, loading } = useProgress(user?.uid)
-  if (loading) return null
+  if (loading) return <div className="min-h-screen flex items-center justify-center"><span className="text-gray-400 font-display">Loading…</span></div>
   if (!profile?.setupComplete) return <Navigate to="/setup" replace />
   return children
 }

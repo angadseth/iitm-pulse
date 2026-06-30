@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../hooks/useAuth'
 import { useProgress } from '../hooks/useProgress'
-import { getCourseById, COURSES } from '../data/handbook'
+import { getCourseById } from '../data/handbook'
 import { getUpcomingDeadlines } from '../utils/deadlines'
 import SubjectCard from '../components/SubjectCard'
 import UrgentStrip from '../components/UrgentStrip'
@@ -31,7 +31,7 @@ export default function DashboardPage() {
             Hey {firstName} ⚡
           </h1>
           <p className="text-sm text-gray-500 mt-0.5">
-            {upcoming.length > 0
+            {upcoming.filter(d => d.daysLeft <= 7).length > 0
               ? `${upcoming.filter(d => d.daysLeft <= 7).length} deadline${upcoming.filter(d => d.daysLeft <= 7).length !== 1 ? 's' : ''} this week`
               : 'All clear this week 🎉'}
           </p>
