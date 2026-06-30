@@ -2,6 +2,7 @@
   "name": "iitm-pulse",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://angadseth.github.io/iitm-pulse",
   "type": "module",
   "scripts": {
     "dev": "vite",
