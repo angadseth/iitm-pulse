@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { daysUntil, urgencyLevel } from '../utils/deadlines'
+import { daysUntil } from '../utils/deadlines'
 
 export default function SubjectDetail({ course, progress, toggleAssignment, toggleSpecial, onClose }) {
   const cp = progress[course.id] ?? {}
