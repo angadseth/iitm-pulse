@@ -13,10 +13,19 @@ export function useProgress(uid) {
     const profileRef  = doc(db, 'users', uid, 'data', 'profile')
     const progressRef = doc(db, 'users', uid, 'data', 'progress')
 
-    const unsubProfile  = onSnapshot(profileRef,  snap => setProfile(snap.exists()  ? snap.data()  : null))
+    let profileReady  = false
+    let progressReady = false
+
+    const unsubProfile = onSnapshot(profileRef, snap => {
+      setProfile(snap.exists() ? snap.data() : null)
+      profileReady = true
+      if (progressReady) setLoading(false)
+    })
+
     const unsubProgress = onSnapshot(progressRef, snap => {
       setProgress(snap.exists() ? snap.data() : {})
-      setLoading(false)
+      progressReady = true
+      if (profileReady) setLoading(false)
     })
 
     return () => { unsubProfile(); unsubProgress() }

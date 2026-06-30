@@ -53,7 +53,7 @@ export default function LoginPage() {
         </motion.button>
 
         <p className="mt-6 text-xs text-gray-400">
-          Only <span className="font-medium">@ds.study.iitm.ac.in</span> emails are accepted
+          Only <span className="font-medium">@study.iitm.ac.in</span> and <span className="font-medium">@ds.study.iitm.ac.in</span> emails are accepted
         </p>
       </motion.div>
     </div>

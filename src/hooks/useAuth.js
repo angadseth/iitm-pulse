@@ -31,7 +31,7 @@ export function useAuth() {
   async function signIn() {
     setError(null)
     const provider = new GoogleAuthProvider()
-    provider.setCustomParameters({ hd: 'ds.study.iitm.ac.in' })
+    provider.setCustomParameters({ hd: 'study.iitm.ac.in' })
     try {
       await signInWithPopup(auth, provider)
     } catch (err) {
