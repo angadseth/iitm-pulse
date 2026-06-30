@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* 3D card base — applied via className="card-3d" */
+.card-3d {
+  transform: perspective(1000px) rotateX(2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(0deg) translateY(-8px);
+  box-shadow: 0 24px 48px rgba(139, 0, 0, 0.15);
+}
