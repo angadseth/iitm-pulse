@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
     "firebase": "^12.15.0",
     "framer-motion": "^12.42.0",
     "react": "^19.2.7",
